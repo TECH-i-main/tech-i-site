@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="TECH-i | 小型IT開発 大阪 | 中小・個人向け IT機能追加・HP制作・自動化スクリプト"
+    />
+    <meta
+      name="keywords"
+      content="IT開発, HP制作, 自動化スクリプト, 大阪, フリーランス"
+    />
+    <meta name="author" content="合同会社 TECH-i" />
+    <meta property="og:title" content="TECH-i | 小型IT開発" />
+    <meta
+      property="og:description"
+      content="中小・個人向け、10万円以内の即戦力IT機能追加。大企業開発経験を活かして、高速納品。"
+    />
+    <meta property="og:image" content="assets/images/og-image.svg" />
+    <meta property="og:url" content="https://tech-i.github.io" />
+    <title>TECH-i | 小型IT開発 大阪</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/images/favicon.svg?v=1"
+    />
+    <link rel="shortcut icon" href="assets/images/favicon.svg?v=1" />
+    <link
+      rel="apple-touch-icon"
+      href="assets/images/apple-touch-icon.png?v=1"
+    />
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- Particles.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js"></script>
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "合同会社 TECH-i",
+        "image": "assets/images/logo.svg",
+        "description": "小型IT開発、HP制作、自動化スクリプト",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "大阪"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Sales",
+          "email": "r.takeuchi@tech-i.net"
+        }
+      }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-096VWJJK4H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-096VWJJK4H");
+    </script>
+  </head>
+  <body class="bg-black text-white font-sans overflow-x-hidden">
+    <!-- Fixed Header/Navigation -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-90 backdrop-blur-md border-b border-gray-800"
+    >
+      <nav
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between"
+      >
+        <!-- ロゴ -->
+        <div class="flex-shrink-0">
+          <a href="#home" class="flex items-center space-x-3">
+            <img
+              src="assets/images/logo.svg"
+              alt="TECH-i"
+              class="h-10 w-auto"
+            />
+            <span
+              class="text-xl font-bold text-white hidden sm:inline-block font-inter tracking-tight"
+              >TECH-i</span
+            >
+          </a>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a
+            href="#home"
+            class="text-gray-300 hover:text-red-500 transition-colors text-sm font-medium"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="text-gray-300 hover:text-red-500 transition-colors text-sm font-medium"
+            >About</a
+          >
+          <a
+            href="#services"
+            class="text-gray-300 hover:text-red-500 transition-colors text-sm font-medium"
+            >Services</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-300 hover:text-red-500 transition-colors text-sm font-medium"
+            >Contact</a
+          >
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden text-white" id="mobile-menu-btn">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden border-t border-gray-800">
+        <div class="px-4 py-4 space-y-3">
+          <a
+            href="#home"
+            class="block text-gray-300 hover:text-red-500 transition-colors text-sm font-medium"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="block text-gray-300 hover:text-red-500 transition-colors text-sm font-medium"
+            >About</a
+          >
+          <a
+            href="#services"
+            class="block text-gray-300 hover:text-red-500 transition-colors text-sm font-medium"
+            >Services</a
+          >
+          <a
+            href="#contact"
+            class="block text-gray-300 hover:text-red-500 transition-colors text-sm font-medium"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="relative min-h-screen pt-20 flex items-center justify-center overflow-hidden"
+    >
+      <!-- Background Gradient -->
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-red-600 via-red-500 to-red-700 opacity-20"
+      ></div>
+      <div
+        class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-red-900/20 to-transparent"
+      ></div>
+
+      <!-- Animated Background Elements -->
+      <div
+        class="absolute top-20 left-10 w-72 h-72 bg-red-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"
+      ></div>
+      <div
+        class="absolute top-40 right-10 w-72 h-72 bg-red-400 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"
+      ></div>
+      <div
+        class="absolute -bottom-8 left-1/2 w-72 h-72 bg-red-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"
+      ></div>
+
+      <!-- Content -->
+      <div
+        class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+      >
+        <!-- Logo -->
+        <div class="mb-8 animate-fade-in">
+          <img
+            src="assets/images/logo.svg"
+            alt="TECH-i"
+            class="h-24 w-auto mx-auto drop-shadow-2xl"
+          />
+        </div>
+
+        <!-- Tagline -->
+        <h1
+          class="text-5xl sm:text-6xl lg:text-7xl font-black font-plus-jakarta leading-tight mb-6 text-white drop-shadow-2xl animate-fade-in animation-delay-200"
+        >
+          IT 課題、<br /><span
+            class="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent"
+            >素早く丁寧に解決。</span
+          >
+        </h1>
+
+        <!-- Description -->
+        <p
+          class="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-12 animate-fade-in animation-delay-400 leading-relaxed"
+        >
+          中小・個人向け、小規模案件に特化。<br />
+          大企業のWebシステム開発経験を活かし、高速納品・高品質を実現します。
+        </p>
+
+        <!-- CTA Button -->
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in animation-delay-600"
+        >
+          <a
+            href="#contact"
+            class="group relative px-8 py-4 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-red-500/50 overflow-hidden"
+          >
+            <span class="relative z-10">問い合わせ</span>
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-red-500 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity"
+            ></div>
+          </a>
+          <a
+            href="#services"
+            class="px-8 py-4 border-2 border-red-500 text-white font-semibold rounded-lg hover:bg-red-500/10 transition-all duration-300"
+          >
+            サービス一覧
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <svg
+          class="w-6 h-6 text-red-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Services Snippet Section -->
+    <section class="relative py-20 px-4 sm:px-6 lg:px-8 bg-black">
+      <div class="max-w-6xl mx-auto">
+        <h2
+          class="text-3xl sm:text-4xl font-black font-plus-jakarta mb-16 text-center"
+        >
+          得意分野<span class="text-red-500">.</span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Card 1: Feature Development -->
+          <div
+            class="group relative bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-xl p-8 hover:border-red-500/50 transition-all duration-300 overflow-hidden"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-red-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+            ></div>
+            <div class="relative z-10">
+              <div
+                class="w-14 h-14 bg-red-500/20 rounded-lg flex items-center justify-center mb-4"
+              >
+                <svg
+                  class="w-7 h-7 text-red-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3">機能追加・開発</h3>
+              <p class="text-gray-400 mb-6">
+                既存システムの機能追加、API連携、CRUD機能実装など。小規模から中規模開発に対応します。
+              </p>
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-red-400 font-semibold">3〜30万円</span>
+                <span class="text-gray-500">1〜10日</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Web Design/Coding -->
+          <div
+            class="group relative bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-xl p-8 hover:border-red-500/50 transition-all duration-300 overflow-hidden"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-red-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+            ></div>
+            <div class="relative z-10">
+              <div
+                class="w-14 h-14 bg-red-500/20 rounded-lg flex items-center justify-center mb-4"
+              >
+                <svg
+                  class="w-7 h-7 text-red-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3">HP制作・コーディング</h3>
+              <p class="text-gray-400 mb-6">
+                レスポンシブなHTML/CSS/JS実装。デザインカンプからの完全コーディングに対応。
+              </p>
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-red-400 font-semibold">2〜20万円</span>
+                <span class="text-gray-500">1〜10日</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Automation Scripts -->
+          <div
+            class="group relative bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-xl p-8 hover:border-red-500/50 transition-all duration-300 overflow-hidden"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-red-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+            ></div>
+            <div class="relative z-10">
+              <div
+                class="w-14 h-14 bg-red-500/20 rounded-lg flex items-center justify-center mb-4"
+              >
+                <svg
+                  class="w-7 h-7 text-red-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold mb-3">業務自動化スクリプト</h3>
+              <p class="text-gray-400 mb-6">
+                Python、RPA、業務自動化スクリプト開発。定型業務の効率化を実現します。
+              </p>
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-red-400 font-semibold">1〜5万円</span>
+                <span class="text-gray-500">1〜3日</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-16 text-center">
+          <a
+            href="#services"
+            class="inline-block px-8 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors"
+          >
+            詳細を見る
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-950"
+    >
+      <div class="max-w-6xl mx-auto">
+        <h2
+          class="text-3xl sm:text-4xl font-black font-plus-jakarta mb-16 text-center"
+        >
+          代表略歴<span class="text-red-500">.</span>
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Left: Timeline -->
+          <div class="space-y-8">
+            <h3 class="text-2xl font-bold mb-8">経歴・実績</h3>
+
+            <!-- Timeline Item 1 -->
+            <div class="relative pl-8 border-l-2 border-red-600">
+              <div
+                class="absolute -left-4 top-0 w-5 h-5 bg-red-600 rounded-full"
+              ></div>
+              <div>
+                <h4 class="text-lg font-bold text-red-400">
+                  大手Web/業務システム開発
+                </h4>
+                <p class="text-gray-400 mt-2">
+                  大規模SIer企業のパートナーとして、大手企業Webシステムの設計・開発・運用に従事中。チームリード経験あり。
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="relative pl-8 border-l-2 border-gray-700">
+              <div
+                class="absolute -left-4 top-0 w-5 h-5 bg-gray-700 rounded-full"
+              ></div>
+              <div>
+                <h4 class="text-lg font-bold">応用情報技術者試験 合格</h4>
+                <p class="text-gray-400 mt-2">
+                  高度情報技術者資格取得。企業システム開発の実践的知識を習得。
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="relative pl-8 border-l-2 border-gray-700">
+              <div
+                class="absolute -left-4 top-0 w-5 h-5 bg-gray-700 rounded-full"
+              ></div>
+              <div>
+                <h4 class="text-lg font-bold">
+                  ITメガベンチャー企業でのWebマーケティング
+                </h4>
+                <p class="text-gray-400 mt-2">
+                  大手ITメガベンチャー企業にて、Webマーケティング業務を担当。デジタル広告運用、SEO対策、データ分析を経験。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Skills -->
+          <div>
+            <h3 class="text-2xl font-bold mb-8">スキル</h3>
+
+            <!-- スキルアイコン群: CDN (devicon) から SVG を読み込み表示します -->
+            <div class="grid grid-cols-2 gap-4">
+              <div
+                class="flex items-center space-x-3 bg-gray-900 p-3 rounded-lg border border-gray-800 hover:border-red-500/50 transition-colors"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                  alt="Python"
+                  class="w-6 h-6"
+                  loading="lazy"
+                />
+                <span>Python</span>
+              </div>
+              <div
+                class="flex items-center space-x-3 bg-gray-900 p-3 rounded-lg border border-gray-800 hover:border-red-500/50 transition-colors"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                  alt="JavaScript"
+                  class="w-6 h-6"
+                  loading="lazy"
+                />
+                <span>JavaScript</span>
+              </div>
+              <div
+                class="flex items-center space-x-3 bg-gray-900 p-3 rounded-lg border border-gray-800 hover:border-red-500/50 transition-colors"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                  alt="React"
+                  class="w-6 h-6"
+                  loading="lazy"
+                />
+                <span>React</span>
+              </div>
+              <div
+                class="flex items-center space-x-3 bg-gray-900 p-3 rounded-lg border border-gray-800 hover:border-red-500/50 transition-colors"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                  alt="Java"
+                  class="w-6 h-6"
+                  loading="lazy"
+                />
+                <span>Java</span>
+              </div>
+              <div
+                class="flex items-center space-x-3 bg-gray-900 p-3 rounded-lg border border-gray-800 hover:border-red-500/50 transition-colors"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg"
+                  alt="Oracle"
+                  class="w-6 h-6"
+                  loading="lazy"
+                />
+                <span>Oracle</span>
+              </div>
+              <div
+                class="flex items-center space-x-3 bg-gray-900 p-3 rounded-lg border border-gray-800 hover:border-red-500/50 transition-colors"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                  alt="HTML5"
+                  class="w-6 h-6"
+                  loading="lazy"
+                />
+                <span>HTML / CSS</span>
+              </div>
+              <div
+                class="flex items-center space-x-3 bg-gray-900 p-3 rounded-lg border border-gray-800 hover:border-red-500/50 transition-colors"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                  alt="Docker"
+                  class="w-6 h-6"
+                  loading="lazy"
+                />
+                <span>Docker</span>
+              </div>
+              <div
+                class="flex items-center space-x-3 bg-gray-900 p-3 rounded-lg border border-gray-800 hover:border-red-500/50 transition-colors"
+              >
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                  alt="Git"
+                  class="w-6 h-6"
+                  loading="lazy"
+                />
+                <span>Git</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="relative py-20 px-4 sm:px-6 lg:px-8 bg-black">
+      <div class="max-w-6xl mx-auto">
+        <h2
+          class="text-3xl sm:text-4xl font-black font-plus-jakarta mb-16 text-center"
+        >
+          サービス<span class="text-red-500">.</span>
+        </h2>
+
+        <!-- Services Table / Cards -->
+        <div class="space-y-6 mb-12">
+          <!-- Service Card 1 -->
+          <div
+            class="group relative bg-gradient-to-r from-gray-900 to-gray-950 border border-gray-800 rounded-xl p-8 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/20 transition-all duration-300 overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-40 h-40 bg-red-600/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-300"
+            ></div>
+            <div
+              class="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-4 items-center"
+            >
+              <div>
+                <h3 class="text-xl font-bold">既存システム機能追加</h3>
+                <p class="text-gray-400 text-sm mt-1">CRUD追加、API連携など</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">価格範囲</p>
+                <p class="text-lg font-bold text-red-400">3〜30万円</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">納期目安</p>
+                <p class="text-lg font-bold text-gray-300">1〜10日</p>
+              </div>
+              <div class="text-center">
+                <p
+                  class="text-xs text-red-400 bg-red-400/10 px-3 py-2 rounded inline-block"
+                >
+                  相場より低価格
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div
+            class="group relative bg-gradient-to-r from-gray-900 to-gray-950 border border-gray-800 rounded-xl p-8 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/20 transition-all duration-300 overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-40 h-40 bg-red-600/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-300"
+            ></div>
+            <div
+              class="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-4 items-center"
+            >
+              <div>
+                <h3 class="text-xl font-bold">HP制作コーディング</h3>
+                <p class="text-gray-400 text-sm mt-1">
+                  レスポンシブHTML/CSS/JS
+                </p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">価格範囲</p>
+                <p class="text-lg font-bold text-red-400">2〜20万円</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">納期目安</p>
+                <p class="text-lg font-bold text-gray-300">1〜10日</p>
+              </div>
+              <div class="text-center">
+                <p
+                  class="text-xs text-red-400 bg-red-400/10 px-3 py-2 rounded inline-block"
+                >
+                  高速納品
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div
+            class="group relative bg-gradient-to-r from-gray-900 to-gray-950 border border-gray-800 rounded-xl p-8 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/20 transition-all duration-300 overflow-hidden"
+          >
+            <div
+              class="absolute top-0 right-0 w-40 h-40 bg-red-600/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-300"
+            ></div>
+            <div
+              class="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-4 items-center"
+            >
+              <div>
+                <h3 class="text-xl font-bold">業務自動化スクリプト</h3>
+                <p class="text-gray-400 text-sm mt-1">
+                  Python、RPA、業務自動化スクリプト開発。定型業務の効率化を実現します。
+                </p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">価格範囲</p>
+                <p class="text-lg font-bold text-red-400">1〜5万円</p>
+              </div>
+              <div>
+                <p class="text-sm text-gray-500">納期目安</p>
+                <p class="text-lg font-bold text-gray-300">1〜3日</p>
+              </div>
+              <div class="text-center">
+                <p
+                  class="text-xs text-red-400 bg-red-400/10 px-3 py-2 rounded inline-block"
+                >
+                  即日対応可能
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    >
+      <!-- Background Elements -->
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-red-900/20 via-black to-black"
+      ></div>
+      <div
+        class="absolute top-0 right-0 w-96 h-96 bg-red-600/20 rounded-full blur-3xl opacity-20"
+      ></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl sm:text-4xl font-black font-plus-jakarta mb-8">
+          お問い合わせ<span class="text-red-500">.</span>
+        </h2>
+
+        <p class="text-lg text-gray-300 mb-12 max-w-2xl mx-auto">
+          IT課題解決、HP制作、自動化のご相談はお気軽にメールをください。<br />
+          24時間以内にご返信いたします。
+        </p>
+
+        <!-- Email CTA -->
+        <div
+          class="bg-gradient-to-br from-gray-900 to-gray-950 border border-red-600/30 rounded-2xl p-12 hover:border-red-600/60 transition-colors"
+        >
+          <p class="text-gray-400 mb-4">メールで直接お問い合わせ：</p>
+          <a
+            href="mailto:r.takeuchi@tech-i.net"
+            class="inline-block px-8 py-4 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-bold text-lg rounded-lg transition-all duration-300 shadow-lg hover:shadow-red-500/50"
+          >
+            r.takeuchi@tech-i.net
+          </a>
+          <div class="mt-6 text-sm text-gray-400">
+            <p>
+              GitHub:
+              <a
+                href="https://github.com/TECH-i-main"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline text-gray-200"
+                >https://github.com/TECH-i-main</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="border-t border-gray-800 py-12 px-4 sm:px-6 lg:px-8 bg-black"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <!-- Company Info -->
+          <div>
+            <h3 class="font-bold text-white mb-4">合同会社 TECH-i</h3>
+            <p class="text-gray-400 text-sm">
+              小規模IT課題解決。中小・個人向けの即戦力IT機能追加・HP制作・自動化スクリプト開発など。
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3 class="font-bold text-white mb-4">リンク</h3>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-400 hover:text-red-400 transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-red-400 transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-400 hover:text-red-400 transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-red-400 transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h3 class="font-bold text-white mb-4">お問い合わせ</h3>
+            <a
+              href="mailto:r.takeuchi@tech-i.net"
+              class="text-gray-400 hover:text-red-400 transition-colors text-sm"
+            >
+              r.takeuchi@tech-i.net
+            </a>
+            <p class="mt-2 text-sm text-gray-400">
+              GitHub:
+              <a
+                href="https://github.com/TECH-i-main"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline text-gray-300"
+                >https://github.com/TECH-i-main</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div
+          class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm"
+        >
+          <p>&copy; 2026 TECH-i LLC. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/particles.js"></script>
+  </body>
+</html>

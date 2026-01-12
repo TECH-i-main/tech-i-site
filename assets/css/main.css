@@ -1,0 +1,498 @@
+/*
+  TECH-i サイト用カスタム CSS
+  - Tailwind CSS を補完する形で軽量なユーティリティとアニメーションを定義しています。
+*/
+
+/* ルート変数: 色の主要定義 */
+:root {
+  --primary-red: #dc2626;
+  --primary-red-light: #ef4444;
+  --primary-red-dark: #991b1b;
+}
+
+/* Font Setup */
+html {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", "Helvetica Neue",
+    sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-inter {
+  font-family: "Inter", sans-serif;
+}
+
+.font-plus-jakarta {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Responsive Display Fixes - Override Tailwind's .hidden class */
+@media (min-width: 640px) {
+  .hidden.sm\:inline-block,
+  .hidden[class*="sm:inline-block"] {
+    display: inline-block !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .hidden.md\:flex,
+  .hidden[class*="md:flex"] {
+    display: flex !important;
+  }
+}
+
+/*
+  スムーススクロール / ベース設定
+  Lenis を使用するため、ブラウザの標準 scroll-behavior は補助的に指定しています。
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+/* ページ全体の背景色と文字色を暗めに固定（ダークテーマ） */
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* フェードイン汎用クラス
+   - 要素に .animate-fade-in を付けると遅延なしでフェードインします。
+   - 遅延を付けたい場合は .animation-delay-200 / 400 / 600 を併用してください。 */
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-blob {
+  /* 背景装飾用のゆっくりした揺れアニメーション */
+  animation: blob 7s infinite;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Tailwind Custom Animations */
+.animate-bounce {
+  /* スクロールを促すインジケーター用バウンス */
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Hover Effects */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* スクロール時に段階的に表示する */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
+
+.scroll-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ヒーローセクション専用の背景調整 */
+#home {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d0000 50%, #1a1a1a 100%);
+  position: relative;
+}
+
+/* ヒーローセクション内のテキストにカーニングを適用 */
+#home h1,
+#home p,
+#home a {
+  letter-spacing: -0.02em;
+}
+
+#home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="rgba(0,0,0,.5)"/><rect width="100%" height="100%" fill="url(%23grid)" /></svg>');
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* Text Gradients */
+.text-gradient {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass Morphism */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Service Cards Animation */
+.service-card {
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgb(220, 38, 38);
+}
+
+/* Button Styles */
+button,
+a.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+button:hover,
+a.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Smooth Scroll with CSS */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* Dark Mode Defaults */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Link Transitions */
+a {
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--primary-red-light);
+}
+
+/* Focus Styles (Accessibility) */
+button:focus,
+a:focus {
+  outline: 2px solid var(--primary-red);
+  outline-offset: 2px;
+}
+
+/* Intersection Observer Animation */
+.section-animate {
+  opacity: 0;
+  transform: translateY(60px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+
+.section-animate.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Code Block Styling */
+code {
+  background: rgba(255, 0, 0, 0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+}
+
+pre {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+/* Loading Skeleton */
+.skeleton {
+  background: linear-gradient(90deg, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Utility Classes */
+.text-red-accent {
+  color: var(--primary-red-light);
+}
+
+.border-red-accent {
+  border-color: var(--primary-red-light);
+}
+
+.bg-red-accent-light {
+  background-color: rgba(220, 38, 38, 0.1);
+}
+
+/* Container Max Widths */
+.container {
+  max-width: 1280px;
+}
+
+/* Grid Responsive */
+@media (max-width: 1024px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* Transition Utilities */
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+/* Shadow Utilities */
+.shadow-red-500\/50 {
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(10deg);
+  }
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+  .text-5xl {
+    font-size: 2.5rem;
+    line-height: 2.8rem;
+  }
+
+  .text-3xl {
+    font-size: 1.875rem;
+  }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: more) {
+  body {
+    color: #fff;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+}
+
+/* Dark Theme Enhancements */
+html {
+  color-scheme: dark;
+}
+
+/* Z-index Management */
+.z-nav {
+  z-index: 50;
+}
+
+.z-modal {
+  z-index: 100;
+}
+
+.z-tooltip {
+  z-index: 75;
+}
+
+/* Mobile Menu Visibility Control */
+.hidden {
+  display: none !important;
+}
+
+.hidden.show {
+  display: block !important;
+}
+
+#mobile-menu {
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+
+#mobile-menu:not(.hidden) {
+  display: block;
+}
+
+#mobile-menu.show {
+  display: block;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
