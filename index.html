@@ -726,6 +726,31 @@
               >
             </p>
           </div>
+          <form id="contact-form" class="mt-12 space-y-6">
+            <!-- 問い合わせボタン -->
+            <button
+              id="contact-btn"
+              type="submit"
+              class="group h-8 select-none rounded-lg bg-red-600 px-3 text-sm leading-8 text-zinc-50 shadow-[0_-1px_0_1px_#7f1d1d_inset,0_0_0_1px_#b91c1c_inset,0_0.5px_0_1.5px_#f87171_inset] hover:bg-red-700 active:bg-red-800 active:shadow-[-1px_0px_1px_0px_rgba(0,0,0,.2)_inset,1px_0px_1px_0px_rgba(0,0,0,.2)_inset,0px_0.125rem_0px_0px_rgba(0,0,0,.6)_inset]"
+            >
+              <span class="block group-active:[transform:translate3d(0,1px,0)]"
+                >📧 お問い合わせ（デモ）</span
+              >
+            </button>
+            <br />
+            <br />
+            <!-- Turnstile（認証ウィジェット） -->
+            <div
+              class="cf-turnstile"
+              data-sitekey="0x4AAAAAACf4wLqprvlKziqy"
+            ></div>
+            <script
+              src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+              async
+              defer
+            ></script>
+          </form>
+          <div id="status"></div>
         </div>
       </div>
     </section>
@@ -813,5 +838,37 @@
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/particles.js"></script>
+    <script>
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const formData = new FormData(e.target);
+          const token = formData.get("cf-turnstile-response");
+
+          const btn = document.getElementById("contact-btn");
+          btn.disabled = true;
+          btn.textContent = "送信中...";
+
+          try {
+            const res = await fetch("/api/contact", {
+              method: "POST",
+              body: formData,
+            });
+
+            const result = await res.json();
+            document.getElementById("status").innerHTML = res.ok
+              ? "✅ 送信完了！"
+              : `❌ ${result.error}`;
+          } catch {
+            document.getElementById("status").innerHTML =
+              "❌ エラーが発生しました";
+          }
+
+          btn.disabled = false;
+          btn.textContent = "📧 お問い合わせ（デモ）";
+        });
+    </script>
   </body>
 </html>
