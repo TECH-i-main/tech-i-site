@@ -1,7 +1,13 @@
 export async function onRequestPost({ request, env }) {
+  console.log("== DEBUG INFO ==");
+  console.log("TURNSTILE_SECRET exists?", !!env.TURNSTILE_SECRET);
+  console.log("RESEND_API_KEY exists?", !!env.RESEND_API_KEY);
+  console.log("Secret length:", env.TURNSTILE_SECRET?.length);
+
   // Turnstile検証
   const formData = await request.formData();
   const token = formData.get("cf-turnstile-response");
+  console.log("Token received:", !!token, token?.substring(0, 20) + "...");
 
   if (!token) {
     return Response.json({ error: "認証トークンが必要です" }, { status: 400 });
