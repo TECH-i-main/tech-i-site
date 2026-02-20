@@ -5,27 +5,27 @@ export async function onRequestPost({ request, env }) {
   console.log("Secret length:", env.TURNSTILE_SECRET?.length);
 
   // Turnstile検証
-  const formData = await request.formData();
-  const token = formData.get("cf-turnstile-response");
-  console.log("Token received:", !!token, token?.substring(0, 20) + "...");
+  //   const formData = await request.formData();
+  //   const token = formData.get("cf-turnstile-response");
+  //   console.log("Token received:", !!token, token?.substring(0, 20) + "...");
 
-  if (!token) {
-    return Response.json({ error: "認証トークンが必要です" }, { status: 400 });
-  }
+  //   if (!token) {
+  //     return Response.json({ error: "認証トークンが必要です" }, { status: 400 });
+  //   }
 
-  const turnstileRes = await fetch(
-    "https://challenges.cloudflare.com/turnstile/v0/siteverify",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: `secret=${env.TURNSTILE_SECRET}&response=${token}`,
-    },
-  );
+  //   const turnstileRes = await fetch(
+  //     "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+  //     {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //       body: `secret=${env.TURNSTILE_SECRET}&response=${token}`,
+  //     },
+  //   );
 
-  const turnstileData = await turnstileRes.json();
-  if (!turnstileData.success) {
-    return Response.json({ error: "認証に失敗しました" }, { status: 403 });
-  }
+  //   const turnstileData = await turnstileRes.json();
+  //   if (!turnstileData.success) {
+  //     return Response.json({ error: "認証に失敗しました" }, { status: 403 });
+  //   }
 
   // Resendでメール送信
   const sendRes = await fetch("https://api.resend.com/emails", {
