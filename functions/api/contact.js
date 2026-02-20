@@ -50,6 +50,7 @@ export async function onRequestPost({ request, env }) {
   });
 
   if (!sendRes.ok) {
+    console.error("メール送信エラー:", await sendRes.text());
     return Response.json({ error: "メール送信エラー" }, { status: 500 });
   }
 
