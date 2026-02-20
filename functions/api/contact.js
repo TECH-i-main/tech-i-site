@@ -35,8 +35,8 @@ export async function onRequestPost({ request, env }) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "デモサイト <noreply@yourdomain.com>",
-      to: ["your-email@gmail.com"],
+      from: "デモ <noreply@resend.dev>",
+      to: ["r.takeuchi@tech-i.net"],
       subject: "【デモ】お問い合わせが来ました！",
       html: `
         <h2>Cloudflare Pagesデモ - お問い合わせ</h2>
