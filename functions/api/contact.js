@@ -40,7 +40,7 @@ export async function onRequestPost({ request, env }) {
       subject: "【デモ】お問い合わせが来ました！",
       html: `
         <h2>Cloudflare Pagesデモ - お問い合わせ</h2>
-        <p><strong>IP:</strong> ${ip}</p>
+        <p><strong>IP:</strong> ${request.headers.get("CF-Connecting-IP")}</p>
         <p><strong>User Agent:</strong> ${request.headers.get("User-Agent")}</p>
         <p><strong>時刻:</strong> ${new Date().toISOString()}</p>
         <hr>
