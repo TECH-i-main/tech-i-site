@@ -1,0 +1,68 @@
+---
+// About.astro
+---
+
+<section id="about" class="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-950">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-black font-plus-jakarta mb-16 text-center">
+      代表略歴<span class="text-red-500">.</span>
+    </h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8">
+        <h3 class="text-2xl font-bold mb-8">経歴・実績</h3>
+
+        <div class="relative pl-8 border-l-2 border-red-600">
+          <div class="absolute -left-4 top-0 w-5 h-5 bg-red-600 rounded-full"></div>
+          <div>
+            <h4 class="text-lg font-bold text-red-400">大手Web/業務システム開発</h4>
+            <p class="text-gray-400 mt-2">大規模SIer企業のパートナーとして、大手企業Webシステムの設計・開発・運用に従事中。チームリード経験あり。</p>
+          </div>
+        </div>
+
+        <div class="relative pl-8 border-l-2 border-gray-700">
+          <div class="absolute -left-4 top-0 w-5 h-5 bg-gray-700 rounded-full"></div>
+          <div>
+            <h4 class="text-lg font-bold">応用情報技術者試験 合格</h4>
+            <p class="text-gray-400 mt-2">高度情報技術者資格取得。企業システム開発の実践的知識を習得。</p>
+          </div>
+        </div>
+
+        <div class="relative pl-8 border-l-2 border-gray-700">
+          <div class="absolute -left-4 top-0 w-5 h-5 bg-gray-700 rounded-full"></div>
+          <div>
+            <h4 class="text-lg font-bold">ITメガベンチャー企業でのWebマーケティング</h4>
+            <p class="text-gray-400 mt-2">大手ITメガベンチャー企業にて、Webマーケティング業務を担当。デジタル広告運用、SEO対策、データ分析を経験。</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-bold mb-8">スキル</h3>
+
+        <div class="grid grid-cols-2 gap-4">
+          {[
+            { name: "Python", icon: "python/python-original.svg" },
+            { name: "JavaScript", icon: "javascript/javascript-original.svg" },
+            { name: "React", icon: "react/react-original.svg" },
+            { name: "Java", icon: "java/java-original.svg" },
+            { name: "Oracle", icon: "oracle/oracle-original.svg" },
+            { name: "HTML / CSS", icon: "html5/html5-original.svg" },
+            { name: "Docker", icon: "docker/docker-original.svg" },
+            { name: "Git", icon: "git/git-original.svg" }
+          ].map(skill => (
+            <div class="flex items-center space-x-3 bg-gray-900 p-3 rounded-lg border border-gray-800 hover:border-red-500/50 transition-colors">
+              <img
+                src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skill.icon}`}
+                alt={skill.name}
+                class="w-6 h-6"
+                loading="lazy"
+              />
+              <span>{skill.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
