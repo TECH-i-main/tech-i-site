@@ -1,76 +1,273 @@
 ---
-// Services.astro
+import FadeIn from "./FadeIn";
 ---
 
-<section id="services" class="relative py-20 px-4 sm:px-6 lg:px-8 bg-black">
+<section id="services" class="relative py-24 px-4 sm:px-6 lg:px-8">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl sm:text-4xl font-black font-plus-jakarta mb-16 text-center">
-      サービス<span class="text-red-500">.</span>
-    </h2>
+    <FadeIn client:visible className="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-black font-plus-jakarta mb-4">
+        提供サービス<span class="text-red-500">.</span>
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+        小規模な機能追加から、技術顧問・PMOとしてのプロジェクト推進まで。<br
+          class="hidden sm:block"
+        />
+        ビジネスの規模とフェーズに合わせた最適なITソリューションをご提供します。
+      </p>
+    </FadeIn>
 
-    <div class="space-y-6 mb-12">
-      <div class="group relative bg-gradient-to-r from-gray-900 to-gray-950 border border-gray-800 rounded-xl p-8 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/20 transition-all duration-300 overflow-hidden">
-        <div class="absolute top-0 right-0 w-40 h-40 bg-red-600/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-300"></div>
-        <div class="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
-          <div>
-            <h3 class="text-xl font-bold">既存システム機能追加</h3>
-            <p class="text-gray-400 text-sm mt-1">CRUD追加、API連携など</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Service 1: Web Systems -->
+      <FadeIn client:visible delay={0.1} direction="up" className="h-full">
+        <div
+          class="group relative bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-2xl p-8 hover:border-red-500/50 transition-all duration-300 overflow-hidden flex flex-col h-full"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-red-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+          >
           </div>
-          <div>
-            <p class="text-sm text-gray-500">価格範囲</p>
-            <p class="text-lg font-bold text-red-400">3〜30万円</p>
-          </div>
-          <div>
-            <p class="text-sm text-gray-500">納期目安</p>
-            <p class="text-lg font-bold text-gray-300">1〜10日</p>
-          </div>
-          <div class="text-center">
-            <p class="text-xs text-red-400 bg-red-400/10 px-3 py-2 rounded inline-block">相場より低価格</p>
+          <div class="relative z-10 flex flex-col h-full">
+            <div
+              class="w-14 h-14 bg-red-500/20 rounded-xl flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-7 h-7 text-red-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-white">
+              Webシステム・アプリ開発
+            </h3>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span
+                class="text-xs font-semibold px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md border border-gray-700"
+                >AWS</span
+              >
+              <span
+                class="text-xs font-semibold px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md border border-gray-700"
+                >Spring Boot</span
+              >
+              <span
+                class="text-xs font-semibold px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md border border-gray-700"
+                >要件定義</span
+              >
+              <span
+                class="text-xs font-semibold px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md border border-gray-700"
+                >設計・開発</span
+              >
+            </div>
+            <p class="text-gray-400 leading-relaxed mb-8 flex-grow">
+              既存システムの機能追加から新規Webサービスのゼロベース開発まで対応。<strong
+                >Spring Boot</strong
+              >を用いた堅牢なバックエンド開発や、<strong>AWS</strong
+              >を活用したスケーラブルなインフラ構築・運用を得意としています。大企業での経験を活かし、高品質なアーキテクチャを設計します。
+            </p>
+            <div class="mt-auto pt-6 border-t border-gray-800">
+              <p class="text-sm text-gray-500 mb-1">料金・納期</p>
+              <p class="text-red-400 font-semibold">
+                プロジェクト規模に応じた個別お見積り
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </FadeIn>
 
-      <div class="group relative bg-gradient-to-r from-gray-900 to-gray-950 border border-gray-800 rounded-xl p-8 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/20 transition-all duration-300 overflow-hidden">
-        <div class="absolute top-0 right-0 w-40 h-40 bg-red-600/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-300"></div>
-        <div class="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
-          <div>
-            <h3 class="text-xl font-bold">HP制作コーディング</h3>
-            <p class="text-gray-400 text-sm mt-1">レスポンシブHTML/CSS/JS</p>
+      <!-- Service 2: IT Consulting & PMO -->
+      <FadeIn client:visible delay={0.2} direction="up" className="h-full">
+        <div
+          class="group relative bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-2xl p-8 hover:border-red-500/50 transition-all duration-300 overflow-hidden flex flex-col h-full"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-red-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+          >
           </div>
-          <div>
-            <p class="text-sm text-gray-500">価格範囲</p>
-            <p class="text-lg font-bold text-red-400">2〜20万円</p>
-          </div>
-          <div>
-            <p class="text-sm text-gray-500">納期目安</p>
-            <p class="text-lg font-bold text-gray-300">1〜10日</p>
-          </div>
-          <div class="text-center">
-            <p class="text-xs text-red-400 bg-red-400/10 px-3 py-2 rounded inline-block">高速納品</p>
+          <div class="relative z-10 flex flex-col h-full">
+            <div
+              class="w-14 h-14 bg-red-500/20 rounded-xl flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-7 h-7 text-red-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-white">
+              ITコンサルティング・PMO支援
+            </h3>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span
+                class="text-xs font-semibold px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md border border-gray-700"
+                >IT戦略</span
+              >
+              <span
+                class="text-xs font-semibold px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md border border-gray-700"
+                >技術顧問</span
+              >
+              <span
+                class="text-xs font-semibold px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md border border-gray-700"
+                >PMO</span
+              >
+              <span
+                class="text-xs font-semibold px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md border border-gray-700"
+                >ベンダー折衝</span
+              >
+            </div>
+            <p class="text-gray-400 leading-relaxed mb-8 flex-grow">
+              「システムを導入したいが何から始めればいいか分からない」「開発ベンダーとのコミュニケーションがうまくいかない」といった経営課題を技術面からサポートします。要件定義、技術選定、プロジェクトマネジメントなど、貴社の右腕としてプロジェクトを推進します。
+            </p>
+            <div class="mt-auto pt-6 border-t border-gray-800">
+              <p class="text-sm text-gray-500 mb-1">料金・納期</p>
+              <p class="text-red-400 font-semibold">
+                月額顧問契約 または プロジェクト単位
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </FadeIn>
 
-      <div class="group relative bg-gradient-to-r from-gray-900 to-gray-950 border border-gray-800 rounded-xl p-8 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/20 transition-all duration-300 overflow-hidden">
-        <div class="absolute top-0 right-0 w-40 h-40 bg-red-600/10 rounded-full -mr-20 -mt-20 group-hover:scale-150 transition-transform duration-300"></div>
-        <div class="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
-          <div>
-            <h3 class="text-xl font-bold">業務自動化スクリプト</h3>
-            <p class="text-gray-400 text-sm mt-1">Python、RPA、業務自動化スクリプト開発。定型業務の効率化を実現します。</p>
+      <!-- Service 3: Modern Web Sites -->
+      <FadeIn client:visible delay={0.3} direction="up" className="h-full">
+        <div
+          class="group relative bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-2xl p-8 hover:border-red-500/50 transition-all duration-300 overflow-hidden flex flex-col h-full"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-red-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+          >
           </div>
-          <div>
-            <p class="text-sm text-gray-500">価格範囲</p>
-            <p class="text-lg font-bold text-red-400">1〜5万円</p>
-          </div>
-          <div>
-            <p class="text-sm text-gray-500">納期目安</p>
-            <p class="text-lg font-bold text-gray-300">1〜3日</p>
-          </div>
-          <div class="text-center">
-            <p class="text-xs text-red-400 bg-red-400/10 px-3 py-2 rounded inline-block">即日対応可能</p>
+          <div class="relative z-10 flex flex-col h-full">
+            <div
+              class="w-14 h-14 bg-red-500/20 rounded-xl flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-7 h-7 text-red-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-white">
+              モダンWebサイト・LP制作
+            </h3>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span
+                class="text-xs font-semibold px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md border border-gray-700"
+                >Astro</span
+              >
+              <span
+                class="text-xs font-semibold px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md border border-gray-700"
+                >React</span
+              >
+              <span
+                class="text-xs font-semibold px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md border border-gray-700"
+                >UI/UX</span
+              >
+              <span
+                class="text-xs font-semibold px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md border border-gray-700"
+                >SEO対策</span
+              >
+            </div>
+            <p class="text-gray-400 leading-relaxed mb-8 flex-grow">
+              最新の技術スタック（Astro,
+              React等）を用いた、表示速度が圧倒的に速くSEOに強いコーポレートサイトやランディングページ（LP）の制作を行います。デザインカンプからの精緻なコーディングはもちろん、要件に合わせたモダンなUI/UXをご提供します。
+            </p>
+            <div class="mt-auto pt-6 border-t border-gray-800">
+              <p class="text-sm text-gray-500 mb-1">料金・納期</p>
+              <p class="text-red-400 font-semibold">
+                要件・ページ数に応じた個別お見積り
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </FadeIn>
+
+      <!-- Service 4: Automation & DX -->
+      <FadeIn client:visible delay={0.4} direction="up" className="h-full">
+        <div
+          class="group relative bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-2xl p-8 hover:border-red-500/50 transition-all duration-300 overflow-hidden flex flex-col h-full"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-red-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"
+          >
+          </div>
+          <div class="relative z-10 flex flex-col h-full">
+            <div
+              class="w-14 h-14 bg-red-500/20 rounded-xl flex items-center justify-center mb-6"
+            >
+              <svg
+                class="w-7 h-7 text-red-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-white">
+              業務効率化・自動化支援（DX）
+            </h3>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span
+                class="text-xs font-semibold px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md border border-gray-700"
+                >Python</span
+              >
+              <span
+                class="text-xs font-semibold px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md border border-gray-700"
+                >RPA</span
+              >
+              <span
+                class="text-xs font-semibold px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md border border-gray-700"
+                >API連携</span
+              >
+              <span
+                class="text-xs font-semibold px-2.5 py-1 bg-gray-800 text-gray-300 rounded-md border border-gray-700"
+                >DX推進</span
+              >
+            </div>
+            <p class="text-gray-400 leading-relaxed mb-8 flex-grow">
+              日々の定型業務や手作業を、PythonスクリプトやRPA、各種SaaSのAPI連携を用いて自動化します。「痒い所に手が届く」社内ツールの開発により、業務コストの大幅な削減とヒューマンエラーの防止を実現します。
+            </p>
+            <div class="mt-auto pt-6 border-t border-gray-800">
+              <p class="text-sm text-gray-500 mb-1">料金・納期</p>
+              <p class="text-red-400 font-semibold">
+                単発開発〜継続的な改善支援まで対応
+              </p>
+            </div>
+          </div>
+        </div>
+      </FadeIn>
     </div>
   </div>
 </section>

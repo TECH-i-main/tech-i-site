@@ -1,0 +1,40 @@
+import React from "react";
+import { motion } from "framer-motion";
+
+interface Props {
+  children: React.ReactNode;
+  delay?: number;
+  direction?: "up" | "down" | "left" | "right" | "none";
+  className?: string;
+  duration?: number;
+  margin?: string;
+}
+
+export default function FadeIn({
+  children,
+  delay = 0,
+  direction = "up",
+  className = "",
+  duration = 0.7,
+  margin = "-10%",
+}: Props) {
+  const directions = {
+    up: { y: 40, x: 0 },
+    down: { y: -40, x: 0 },
+    left: { x: 40, y: 0 },
+    right: { x: -40, y: 0 },
+    none: { x: 0, y: 0 },
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, ...directions[direction] }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      viewport={{ once: true, margin: margin as any }}
+      transition={{ duration, delay, ease: "easeOut" }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}

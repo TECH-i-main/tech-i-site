@@ -25,13 +25,48 @@ html {
 body {
   font-family:
     "Inter",
+    "Plus Jakarta Sans",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
     "Helvetica Neue",
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "BIZ UDPGothic",
+    Meiryo,
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* 日本語の最適な改行位置の設定 (Modern Japanese Typography) */
+  word-break: keep-all; /* フォールバック: 単語の途中で改行しない */
+  word-break: auto-phrase; /* 自動的に文節の美しい位置で改行する（最新ブラウザ対応） */
+  line-break: strict;
+  overflow-wrap: anywhere;
+
+  /* プロフェッショナル感を醸し出す文字間隔（自動字詰めとゆったりした字送り） */
+  font-feature-settings: "palt" 1;
+  letter-spacing: 0.05em;
+}
+
+/* 見出しの改行バランスを自動で美しく整える */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  letter-spacing: 0.08em;
+  font-feature-settings: "palt" 1;
+}
+
+/* 段落の最後の行が単語1つで孤立しないように整え、行間をゆったりと取る */
+p,
+li,
+dd {
+  text-wrap: pretty;
+  line-height: 1.8;
 }
 
 .font-inter {
@@ -181,7 +216,12 @@ body {
 
 /* ヒーローセクション専用の背景調整 */
 #home {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d0000 50%, #1a1a1a 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 26, 0.5) 0%,
+    rgba(45, 0, 0, 0.5) 50%,
+    rgba(26, 26, 26, 0.5) 100%
+  );
   position: relative;
 }
 

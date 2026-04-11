@@ -1,22 +1,22 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header';
-import Hero from '../components/Hero.astro';
-import ServicesSnippet from '../components/ServicesSnippet.astro';
-import About from '../components/About.astro';
-import Services from '../components/Services.astro';
-import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
-import '../assets/css/main.css';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Services from "../components/Services.astro";
+import Company from "../components/Company.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+import "../assets/css/main.css";
 ---
 
-<Layout title="TECH-i | 小型IT開発 大阪">
-  <Header client:load />
-  <main>
+<Layout title="TECH-i | Webシステム開発・ITコンサルティング">
+  <Header client:idle />
+  <main class="overflow-x-hidden w-full">
     <Hero />
-    <ServicesSnippet />
     <About />
     <Services />
+    <Company />
     <Contact />
   </main>
   <Footer />

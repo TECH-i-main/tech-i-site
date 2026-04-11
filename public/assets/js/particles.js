@@ -5,7 +5,7 @@
   async function initParticles() {
     try {
       // JSONファイルから設定を読み込む
-      const response = await fetch("particles.json");
+      const response = await fetch("/particles.json");
       const particlesConfig = await response.json();
 
       // tsParticles を初期化

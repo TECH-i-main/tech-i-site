@@ -1,0 +1,119 @@
+---
+import FadeIn from "./FadeIn";
+---
+
+<section id="company" class="relative py-24 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-4xl mx-auto">
+    <FadeIn client:visible className="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-black font-plus-jakarta mb-4">
+        会社概要<span class="text-red-500">.</span>
+      </h2>
+      <p class="text-gray-400">
+        確かな技術力と柔軟な対応力で、貴社のビジネスをテクノロジーで支えます。
+      </p>
+    </FadeIn>
+
+    <FadeIn client:visible delay={0.2} direction="up">
+      <div
+        class="bg-gray-900/50 border border-gray-800 rounded-2xl overflow-hidden backdrop-blur-sm"
+      >
+        <dl class="divide-y divide-gray-800">
+          <div
+            class="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-8 hover:bg-gray-800/30 transition-colors"
+          >
+            <dt class="text-sm font-medium text-gray-400">会社名</dt>
+            <dd
+              class="mt-1 text-sm text-white sm:mt-0 sm:col-span-2 font-semibold"
+            >
+              合同会社 <ruby
+                >TECH-i<rt class="text-[10px] text-gray-400">テックアイ</rt
+                ></ruby
+              > （TECH-i LLC.）
+            </dd>
+          </div>
+          <div
+            class="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-8 hover:bg-gray-800/30 transition-colors"
+          >
+            <dt class="text-sm font-medium text-gray-400">代表者</dt>
+            <dd class="mt-1 text-sm text-white sm:mt-0 sm:col-span-2">
+              竹内 諒多
+            </dd>
+          </div>
+          <div
+            class="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-8 hover:bg-gray-800/30 transition-colors"
+          >
+            <dt class="text-sm font-medium text-gray-400">所在地</dt>
+            <dd class="mt-1 text-sm text-white sm:mt-0 sm:col-span-2">
+              神奈川県横浜市<br /><span class="text-gray-500 text-xs"
+                >※詳細はお取引開始時に開示いたします</span
+              >
+            </dd>
+          </div>
+          <div
+            class="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-8 hover:bg-gray-800/30 transition-colors"
+          >
+            <dt class="text-sm font-medium text-gray-400">設立</dt>
+            <dd class="mt-1 text-sm text-white sm:mt-0 sm:col-span-2">
+              2025年 11月
+            </dd>
+          </div>
+          <div
+            class="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-8 hover:bg-gray-800/30 transition-colors"
+          >
+            <dt class="text-sm font-medium text-gray-400">事業内容</dt>
+            <dd
+              class="mt-1 text-sm text-white sm:mt-0 sm:col-span-2 leading-relaxed"
+            >
+              <ul class="list-disc list-inside space-y-1 text-gray-300">
+                <li>Webシステム・アプリケーションの企画・開発・保守</li>
+                <li>
+                  ITコンサルティングおよびプロジェクトマネジメント（PMO）支援
+                </li>
+                <li>コーポレートサイト・ランディングページ（LP）の制作</li>
+                <li>業務効率化・自動化（RPA・Pythonスクリプト等）の導入支援</li>
+              </ul>
+            </dd>
+          </div>
+          <div
+            class="px-6 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-8 hover:bg-gray-800/30 transition-colors"
+          >
+            <dt class="text-sm font-medium text-gray-400">お問い合わせ</dt>
+            <dd class="mt-1 text-sm text-white sm:mt-0 sm:col-span-2">
+              <a
+                href="mailto:r.takeuchi@tech-i.net"
+                class="text-red-400 hover:text-red-300 transition-colors"
+                >r.takeuchi@tech-i.net</a
+              >
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </FadeIn>
+
+    <FadeIn
+      client:visible
+      delay={0.4}
+      direction="up"
+      className="mt-12 text-center"
+    >
+      <a
+        href="#contact"
+        class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white hover:text-white bg-red-600 border border-transparent rounded-lg hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-red-500/50 hover:-translate-y-1"
+      >
+        お仕事のご相談・お見積りはこちら
+        <svg
+          class="w-5 h-5 ml-2 -mr-1"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+    </FadeIn>
+  </div>
+</section>

@@ -1,67 +1,169 @@
 ---
-// About.astro
+import FadeIn from "./FadeIn";
 ---
 
-<section id="about" class="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-950">
+<section id="about" class="relative py-24 px-4 sm:px-6 lg:px-8">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl sm:text-4xl font-black font-plus-jakarta mb-16 text-center">
-      代表略歴<span class="text-red-500">.</span>
-    </h2>
+    <FadeIn client:visible className="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-black font-plus-jakarta mb-4">
+        代表プロフィール<span class="text-red-500">.</span>
+      </h2>
+      <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+        大規模システムからベンチャーのスピード開発まで。<br
+          class="hidden sm:block"
+        />
+        現場の最前線で培った知見を、貴社のプロジェクトへ還元します。
+      </p>
+    </FadeIn>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div class="space-y-8">
-        <h3 class="text-2xl font-bold mb-8">経歴・実績</h3>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <!-- Left: Profile & Message -->
+      <div class="lg:col-span-7 space-y-8">
+        <FadeIn client:visible delay={0.2} direction="left">
+          <div
+            class="bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-2xl p-8 hover:border-gray-700 transition-colors"
+          >
+            <div class="flex items-center space-x-4 mb-6">
+              <div
+                class="w-16 h-16 bg-red-600/20 text-red-500 rounded-full flex items-center justify-center font-bold text-2xl border border-red-500/30"
+              >
+                T
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-white">竹内 諒多</h3>
+                <p class="text-gray-400 text-sm">
+                  合同会社 TECH-i 代表社員 / シニアソフトウェアエンジニア
+                </p>
+              </div>
+            </div>
 
-        <div class="relative pl-8 border-l-2 border-red-600">
-          <div class="absolute -left-4 top-0 w-5 h-5 bg-red-600 rounded-full"></div>
-          <div>
-            <h4 class="text-lg font-bold text-red-400">大手Web/業務システム開発</h4>
-            <p class="text-gray-400 mt-2">大規模SIer企業のパートナーとして、大手企業Webシステムの設計・開発・運用に従事中。チームリード経験あり。</p>
+            <div class="space-y-4 text-gray-300 leading-relaxed">
+              <p>
+                ITメガベンチャー企業でのWebマーケティング業務を経て、エンジニアへと転身。
+              </p>
+              <p>
+                現在はフリーランスのエンジニアとして、企業向けWebシステム・業務システムの設計・開発・運用の最前線に参画しています。複雑な要件を整理し、安定したシステムへと落とし込む工程を得意としています。
+              </p>
+              <p>
+                並行して、2025年11月に「合同会社TECH-i」を設立。法人としての受託開発事業も既に稼働しており、中小企業様・個人事業主様向けのシステム開発やDX支援を複数進行中です。
+              </p>
+              <div
+                class="bg-red-500/10 border-l-4 border-red-500 p-4 rounded-r-lg mt-6"
+              >
+                <p class="text-sm text-red-100">
+                  <strong>※稼働状況について：</strong> 現在も日中は大手企業様のミッションクリティカルな開発案件に最前線で参画しているため、平日の日中帯は即時のご返信が難しい場合がございます。その分、最新の実務知見をダイレクトに還元し、相場以上の高い技術クオリティをご提供することをお約束いたします。
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
+        </FadeIn>
 
-        <div class="relative pl-8 border-l-2 border-gray-700">
-          <div class="absolute -left-4 top-0 w-5 h-5 bg-gray-700 rounded-full"></div>
-          <div>
-            <h4 class="text-lg font-bold">応用情報技術者試験 合格</h4>
-            <p class="text-gray-400 mt-2">高度情報技術者資格取得。企業システム開発の実践的知識を習得。</p>
-          </div>
-        </div>
-
-        <div class="relative pl-8 border-l-2 border-gray-700">
-          <div class="absolute -left-4 top-0 w-5 h-5 bg-gray-700 rounded-full"></div>
-          <div>
-            <h4 class="text-lg font-bold">ITメガベンチャー企業でのWebマーケティング</h4>
-            <p class="text-gray-400 mt-2">大手ITメガベンチャー企業にて、Webマーケティング業務を担当。デジタル広告運用、SEO対策、データ分析を経験。</p>
-          </div>
-        </div>
+        <!-- Qualifications (Subtle) -->
+        <FadeIn client:visible delay={0.4} direction="up" className="mt-8 px-2">
+          <h4
+            class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-3"
+          >
+            保有資格・認定
+          </h4>
+          <ul class="text-sm text-gray-400 space-y-2">
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 mr-2 text-gray-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg
+              >
+              AWS Certified Solutions Architect - Professional (SAP)
+            </li>
+            <li class="flex items-center">
+              <svg
+                class="w-4 h-4 mr-2 text-gray-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg
+              >
+              応用情報技術者試験（AP）
+            </li>
+          </ul>
+        </FadeIn>
       </div>
 
-      <div>
-        <h3 class="text-2xl font-bold mb-8">スキル</h3>
+      <!-- Right: Tech Stack -->
+      <div class="lg:col-span-5">
+        <FadeIn client:visible delay={0.3} direction="right">
+          <h3 class="text-xl font-bold mb-6 flex items-center">
+            <svg
+              class="w-5 h-5 mr-2 text-red-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              ><path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg
+            >
+            コア・テクノロジー
+          </h3>
 
-        <div class="grid grid-cols-2 gap-4">
-          {[
-            { name: "Python", icon: "python/python-original.svg" },
-            { name: "JavaScript", icon: "javascript/javascript-original.svg" },
-            { name: "React", icon: "react/react-original.svg" },
-            { name: "Java", icon: "java/java-original.svg" },
-            { name: "Oracle", icon: "oracle/oracle-original.svg" },
-            { name: "HTML / CSS", icon: "html5/html5-original.svg" },
-            { name: "Docker", icon: "docker/docker-original.svg" },
-            { name: "Git", icon: "git/git-original.svg" }
-          ].map(skill => (
-            <div class="flex items-center space-x-3 bg-gray-900 p-3 rounded-lg border border-gray-800 hover:border-red-500/50 transition-colors">
-              <img
-                src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skill.icon}`}
-                alt={skill.name}
-                class="w-6 h-6"
-                loading="lazy"
-              />
-              <span>{skill.name}</span>
-            </div>
-          ))}
-        </div>
+          <div class="grid grid-cols-2 gap-3">
+            {
+              [
+                { name: "Java / Spring", icon: "java/java-original.svg" },
+                { name: "Python", icon: "python/python-original.svg" },
+                {
+                  name: "AWS",
+                  icon: "amazonwebservices/amazonwebservices-original-wordmark.svg",
+                },
+                { name: "React", icon: "react/react-original.svg" },
+                {
+                  name: "TypeScript",
+                  icon: "typescript/typescript-original.svg",
+                },
+                { name: "Docker", icon: "docker/docker-original.svg" },
+                { name: "Oracle / SQL", icon: "oracle/oracle-original.svg" },
+                { name: "Git / CI/CD", icon: "git/git-original.svg" },
+              ].map((skill, index) => (
+                <FadeIn client:visible delay={0.4 + index * 0.1} direction="up">
+                  <div class="flex items-center space-x-3 bg-gray-900/80 p-3 rounded-xl border border-gray-800 hover:border-red-500/50 hover:bg-gray-800 transition-all duration-300">
+                    <img
+                      src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skill.icon}`}
+                      alt={skill.name}
+                      class="w-6 h-6 object-contain"
+                      loading="lazy"
+                    />
+                    <span class="text-sm font-medium text-gray-300">
+                      {skill.name}
+                    </span>
+                  </div>
+                </FadeIn>
+              ))
+            }
+          </div>
+
+          <FadeIn
+            client:visible
+            delay={0.8}
+            direction="up"
+            className="mt-8 p-5 bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-xl"
+          >
+            <h4 class="text-sm font-semibold text-white mb-2">得意領域</h4>
+            <p class="text-sm text-gray-400 leading-relaxed">
+              堅牢なバックエンド設計（Java/Spring
+              Boot）、クラウドネイティブなインフラ構築（AWS）、および要件定義から実装・テストまでを一貫して遂行するフルサイクル開発を得意としています。
+            </p>
+          </FadeIn>
+        </FadeIn>
       </div>
     </div>
   </div>

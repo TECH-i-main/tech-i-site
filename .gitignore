@@ -35,3 +35,6 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# Lockfiles (To prevent cross-platform build errors on Cloudflare Pages)
+package-lock.json

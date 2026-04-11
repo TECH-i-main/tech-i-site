@@ -241,11 +241,7 @@
   // フォームバリデーション（連絡フォームを追加した際に利用）
   const contactForm = document.querySelector("#contact form");
   if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      // Form submission handling
-      console.log("Form submitted");
-    });
+    // Form is handled by React component (ContactForm.tsx) now
   }
 
   // ============================================
