@@ -9,9 +9,9 @@
 
 /* ルート変数: 色の主要定義 */
 :root {
-  --primary-red: #dc2626;
-  --primary-red-light: #ef4444;
-  --primary-red-dark: #991b1b;
+  --primary-coral: #ff7f50;
+  --primary-coral-light: #ffa07a;
+  --primary-coral-dark: #e25822;
 }
 
 /* Font Setup */
@@ -246,7 +246,7 @@ body {
 
 /* Text Gradients */
 .text-gradient {
-  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+  background: linear-gradient(135deg, #ff7f50 0%, #ffa07a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -267,7 +267,7 @@ body {
 
 .service-card:hover {
   transform: translateY(-8px);
-  border-color: rgb(220, 38, 38);
+  border-color: rgb(255, 127, 80);
 }
 
 /* Button Styles */
@@ -327,13 +327,13 @@ a {
 }
 
 a:hover {
-  color: var(--primary-red-light);
+  color: var(--primary-coral-light);
 }
 
 /* Focus Styles (Accessibility) */
 button:focus,
 a:focus {
-  outline: 2px solid var(--primary-red);
+  outline: 2px solid var(--primary-coral);
   outline-offset: 2px;
 }
 
@@ -396,16 +396,16 @@ pre {
 }
 
 /* Utility Classes */
-.text-red-accent {
-  color: var(--primary-red-light);
+.text-coral-accent {
+  color: var(--primary-coral-light);
 }
 
-.border-red-accent {
-  border-color: var(--primary-red-light);
+.border-coral-accent {
+  border-color: var(--primary-coral-light);
 }
 
-.bg-red-accent-light {
-  background-color: rgba(220, 38, 38, 0.1);
+.bg-coral-accent-light {
+  background-color: rgba(255, 127, 80, 0.1);
 }
 
 /* Container Max Widths */
@@ -434,13 +434,13 @@ pre {
 }
 
 /* Shadow Utilities */
-.shadow-red-500\/50 {
-  box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+.shadow-coral-500\/50 {
+  box-shadow: 0 0 20px rgba(255, 127, 80, 0.5);
 }
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+  background: linear-gradient(135deg, #ff7f50 0%, #ffa07a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

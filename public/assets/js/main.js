@@ -113,11 +113,11 @@
     });
 
     navLinks.forEach((link) => {
-      link.classList.remove("text-red-500");
+      link.classList.remove("text-coral-500");
       link.classList.add("text-gray-300");
       if (link.getAttribute("href").slice(1) === current) {
         link.classList.remove("text-gray-300");
-        link.classList.add("text-red-500");
+        link.classList.add("text-coral-500");
       }
     });
   });

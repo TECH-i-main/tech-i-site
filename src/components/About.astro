@@ -6,7 +6,7 @@ import FadeIn from "./FadeIn";
   <div class="max-w-6xl mx-auto">
     <FadeIn client:visible className="text-center mb-16">
       <h2 class="text-3xl sm:text-4xl font-black font-plus-jakarta mb-4">
-        代表プロフィール<span class="text-red-500">.</span>
+        代表プロフィール<span class="text-coral-500">.</span>
       </h2>
       <p class="text-gray-400 max-w-2xl mx-auto text-lg">
         大規模システムからベンチャーのスピード開発まで。<br
@@ -25,7 +25,7 @@ import FadeIn from "./FadeIn";
           >
             <div class="flex items-center space-x-4 mb-6">
               <div
-                class="w-16 h-16 bg-red-600/20 text-red-500 rounded-full flex items-center justify-center font-bold text-2xl border border-red-500/30"
+                class="w-16 h-16 bg-coral-600/20 text-coral-500 rounded-full flex items-center justify-center font-bold text-2xl border border-coral-500/30"
               >
                 T
               </div>
@@ -48,9 +48,9 @@ import FadeIn from "./FadeIn";
                 並行して、2025年11月に「合同会社TECH-i」を設立。法人としての受託開発事業も既に稼働しており、中小企業様・個人事業主様向けのシステム開発やDX支援を複数進行中です。
               </p>
               <div
-                class="bg-red-500/10 border-l-4 border-red-500 p-4 rounded-r-lg mt-6"
+                class="bg-coral-500/10 border-l-4 border-coral-500 p-4 rounded-r-lg mt-6"
               >
-                <p class="text-sm text-red-100">
+                <p class="text-sm text-coral-100">
                   <strong>※稼働状況について：</strong> 現在も日中は大手企業様のミッションクリティカルな開発案件に最前線で参画しているため、平日の日中帯は即時のご返信が難しい場合がございます。その分、最新の実務知見をダイレクトに還元し、相場以上の高い技術クオリティをご提供することをお約束いたします。
                 </p>
               </div>
@@ -103,7 +103,7 @@ import FadeIn from "./FadeIn";
         <FadeIn client:visible delay={0.3} direction="right">
           <h3 class="text-xl font-bold mb-6 flex items-center">
             <svg
-              class="w-5 h-5 mr-2 text-red-500"
+              class="w-5 h-5 mr-2 text-coral-500"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -135,7 +135,7 @@ import FadeIn from "./FadeIn";
                 { name: "Git / CI/CD", icon: "git/git-original.svg" },
               ].map((skill, index) => (
                 <FadeIn client:visible delay={0.4 + index * 0.1} direction="up">
-                  <div class="flex items-center space-x-3 bg-gray-900/80 p-3 rounded-xl border border-gray-800 hover:border-red-500/50 hover:bg-gray-800 transition-all duration-300">
+                  <div class="flex items-center space-x-3 bg-gray-900/80 p-3 rounded-xl border border-gray-800 hover:border-coral-500/50 hover:bg-gray-800 transition-all duration-300">
                     <img
                       src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skill.icon}`}
                       alt={skill.name}

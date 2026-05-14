@@ -9,44 +9,41 @@ export default function Header() {
         <div className="flex-shrink-0">
           <a href="#home" className="flex items-center space-x-3">
             <img
-              src="/assets/images/logo.svg"
+              src="/assets/images/logo_main.svg"
               alt="TECH-i"
               className="h-10 w-auto"
             />
-            <span className="text-xl font-bold text-white hidden sm:inline-block font-inter tracking-tight">
-              TECH-i
-            </span>
           </a>
         </div>
 
         <div className="hidden md:flex items-center space-x-8">
           <a
             href="#home"
-            className="text-gray-300 hover:text-red-500 transition-colors text-sm font-medium"
+            className="text-gray-300 hover:text-coral-500 transition-colors text-sm font-medium"
           >
             Home
           </a>
           <a
             href="#about"
-            className="text-gray-300 hover:text-red-500 transition-colors text-sm font-medium"
+            className="text-gray-300 hover:text-coral-500 transition-colors text-sm font-medium"
           >
             About
           </a>
           <a
             href="#services"
-            className="text-gray-300 hover:text-red-500 transition-colors text-sm font-medium"
+            className="text-gray-300 hover:text-coral-500 transition-colors text-sm font-medium"
           >
             Services
           </a>
           <a
             href="#company"
-            className="text-gray-300 hover:text-red-500 transition-colors text-sm font-medium"
+            className="text-gray-300 hover:text-coral-500 transition-colors text-sm font-medium"
           >
             Company
           </a>
           <a
             href="#contact"
-            className="text-gray-300 hover:text-red-500 transition-colors text-sm font-medium"
+            className="text-gray-300 hover:text-coral-500 transition-colors text-sm font-medium"
           >
             Contact
           </a>
@@ -79,35 +76,35 @@ export default function Header() {
             <a
               href="#home"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-gray-300 hover:text-red-500 transition-colors text-sm font-medium"
+              className="block text-gray-300 hover:text-coral-500 transition-colors text-sm font-medium"
             >
               Home
             </a>
             <a
               href="#about"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-gray-300 hover:text-red-500 transition-colors text-sm font-medium"
+              className="block text-gray-300 hover:text-coral-500 transition-colors text-sm font-medium"
             >
               About
             </a>
             <a
               href="#services"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-gray-300 hover:text-red-500 transition-colors text-sm font-medium"
+              className="block text-gray-300 hover:text-coral-500 transition-colors text-sm font-medium"
             >
               Services
             </a>
             <a
               href="#company"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-gray-300 hover:text-red-500 transition-colors text-sm font-medium"
+              className="block text-gray-300 hover:text-coral-500 transition-colors text-sm font-medium"
             >
               Company
             </a>
             <a
               href="#contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block text-gray-300 hover:text-red-500 transition-colors text-sm font-medium"
+              className="block text-gray-300 hover:text-coral-500 transition-colors text-sm font-medium"
             >
               Contact
             </a>

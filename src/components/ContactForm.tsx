@@ -97,7 +97,7 @@ export default function ContactForm() {
           onClick={() => setActiveTab("business")}
           className={`w-full py-3 text-sm sm:text-base font-semibold rounded-lg transition-all duration-200 ${
             activeTab === "business"
-              ? "bg-red-600 text-white shadow-lg"
+              ? "bg-coral-600 text-white shadow-lg"
               : "text-gray-400 hover:text-white hover:bg-gray-800/50"
           }`}
         >
@@ -115,8 +115,16 @@ export default function ContactForm() {
         </button>
       </div>
 
+      {activeTab === "business" && (
+        <div className="mb-6 text-center">
+          <p className="text-sm text-gray-500">
+            ※ SESの協業提案や、各種営業・セールスを目的としたお問い合わせは固くお断りいたします。
+          </p>
+        </div>
+      )}
+
       {submitStatus === "error" && (
-        <div className="mb-6 p-4 bg-red-900/50 border border-red-500/50 rounded-lg text-red-200 text-sm">
+        <div className="mb-6 p-4 bg-coral-900/50 border border-coral-500/50 rounded-lg text-coral-200 text-sm">
           {errorMessage}
         </div>
       )}
@@ -143,14 +151,14 @@ export default function ContactForm() {
                 htmlFor="b_name"
                 className="block text-sm font-medium text-gray-300 mb-2"
               >
-                お名前 <span className="text-red-500">*</span>
+                お名前 <span className="text-coral-500">*</span>
               </label>
               <input
                 type="text"
                 id="b_name"
                 name="name"
                 required
-                className="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors"
+                className="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-coral-500 focus:ring-1 focus:ring-coral-500 transition-colors"
                 placeholder="山田 太郎"
               />
             </div>
@@ -159,14 +167,14 @@ export default function ContactForm() {
                 htmlFor="b_email"
                 className="block text-sm font-medium text-gray-300 mb-2"
               >
-                メールアドレス <span className="text-red-500">*</span>
+                メールアドレス <span className="text-coral-500">*</span>
               </label>
               <input
                 type="email"
                 id="b_email"
                 name="email"
                 required
-                className="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors"
+                className="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-coral-500 focus:ring-1 focus:ring-coral-500 transition-colors"
                 placeholder="taro@example.com"
               />
             </div>
@@ -183,7 +191,7 @@ export default function ContactForm() {
               type="text"
               id="b_company"
               name="company"
-              className="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors"
+              className="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-coral-500 focus:ring-1 focus:ring-coral-500 transition-colors"
               placeholder="株式会社〇〇"
             />
           </div>
@@ -198,7 +206,7 @@ export default function ContactForm() {
             <select
               id="b_type"
               name="inquiry_type"
-              className="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors appearance-none"
+              className="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-coral-500 focus:ring-1 focus:ring-coral-500 transition-colors appearance-none"
             >
               <option value="Webシステム・アプリ開発">
                 Webシステム・アプリ開発
@@ -221,14 +229,14 @@ export default function ContactForm() {
               htmlFor="b_message"
               className="block text-sm font-medium text-gray-300 mb-2"
             >
-              ご相談内容 <span className="text-red-500">*</span>
+              ご相談内容 <span className="text-coral-500">*</span>
             </label>
             <textarea
               id="b_message"
               name="message"
               required
               rows={5}
-              className="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-colors"
+              className="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-coral-500 focus:ring-1 focus:ring-coral-500 transition-colors"
               placeholder="現在の課題やご希望の要件、予算感・納期目安など、お分かりになる範囲でご記入ください。"
             ></textarea>
           </div>
@@ -237,7 +245,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full sm:w-auto px-12 py-4 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition-all duration-300 shadow-lg hover:shadow-red-500/50 flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full sm:w-auto px-12 py-4 bg-coral-600 text-white font-bold rounded-lg hover:bg-coral-700 transition-all duration-300 shadow-lg hover:shadow-coral-500/50 flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {isSubmitting ? "送信中..." : "送信する"}
               {!isSubmitting && (
@@ -288,7 +296,7 @@ export default function ContactForm() {
                 htmlFor="m_name"
                 className="block text-sm font-medium text-gray-300 mb-2"
               >
-                お名前 / ハンドルネーム <span className="text-red-500">*</span>
+                お名前 / ハンドルネーム <span className="text-coral-500">*</span>
               </label>
               <input
                 type="text"
@@ -304,7 +312,7 @@ export default function ContactForm() {
                 htmlFor="m_email"
                 className="block text-sm font-medium text-gray-300 mb-2"
               >
-                連絡用メールアドレス <span className="text-red-500">*</span>
+                連絡用メールアドレス <span className="text-coral-500">*</span>
               </label>
               <input
                 type="email"
@@ -357,7 +365,7 @@ export default function ContactForm() {
               className="block text-sm font-medium text-gray-300 mb-2"
             >
               メッセージ・興味のある技術等{" "}
-              <span className="text-red-500">*</span>
+              <span className="text-coral-500">*</span>
             </label>
             <textarea
               id="m_message"
